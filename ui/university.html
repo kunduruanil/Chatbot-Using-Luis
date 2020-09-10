@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>University PAge</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="bootstrapstyling.css">
+</head>
+<body>
+	<div class="maindiv">
+		<div class="row grey">
+			<div class="col-md-2 ">
+				<img class="img-thumbnail img" src="https://previews.123rf.com/images/captainvector/captainvector1703/captainvector170309945/74377645-university-logo-element.jpg" alt="Thumbnail image" >
+			</div>
+			<div class="col-md-3 name">University</div>
+			<div class="col-md float-right">
+				<button type="button" class="btn btn-primary but">About</button>
+      			<button type="button" class="btn btn-warning but">Academics</button>
+      			<button type="button" class="btn btn-primary but">Admissions</button>
+      			<button type="button" class="btn btn-success but">Help</button>
+			</div>
+		</div>
+		<div class="row second">
+			<div class="col-md-3 yellow">
+				<ul class="st">
+					<li >About University</li>
+					<li>Admissions</li>
+					<li>Academics</li>
+					<li>Help</li>
+				</ul>
+			</div>
+			<div class="col-md-9 white" >
+				<div class="gallery">
+					<p>University Images</p>
+				</div>
+				<div class="im">
+					<img class="images"src="https://files.oyaop.com/uploads/2020/06/image-2.jpg">
+					<img class="images" src="https://www.iecuniversity.com/img/image-iec/sl2.jpg">
+					<img class="images" src="https://www.timeshighereducation.com/sites/default/files/styles/the_breaking_news_image_style/public/university_of_toronto_1_1.jpg?itok=x6owxT6K">
+					<img class="images" src="https://www.timeshighereducation.com/sites/default/files/styles/the_breaking_news_image_style/public/national-university-of-ireland-galway-aula-maxima-quadrangle.jpg?itok=N7xXLaU8">
+					<img class="images" src="https://www.timeshighereducation.com/sites/default/files/styles/the_breaking_news_image_style/public/university_of_toronto_1_1.jpg?itok=x6owxT6K">
+					<img class="images" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTOX_P-Fg6paSjn2UuG7pOMlfwU13lNq-VMnA&usqp=CAU">
+				</div>
+				<div class="About">
+					<p class="gallery">About University</p>
+					<p>Our university is .......</p>
+				</div>
+				<div>
+					<button type="button" class="btn btn-warning but" onclick="f()">To Chat click here</button>
+					
+				</div>
+				<script type="text/javascript">
+					function f() {
+					    var div = document.createElement("div");
+					    document.getElementsByTagName('body')[0].appendChild(div);
+					    div.outerHTML = "<div id='botDiv' style='height: 38px; position: fixed; right: 15px; bottom: 0; z-index: 1000; background-color: #fff'><div id='botTitleBar' style='height: 38px; width: 400px; position:fixed; cursor: pointer;'></div><iframe width='400px' height='600px' background = '#ff08086b' src='http://127.0.0.1:5000/'></iframe></div>"; 
+
+					    document.querySelector('body').addEventListener('click', function (e) {
+					        e.target.matches = e.target.matches || e.target.msMatchesSelector;
+					        if (e.target.matches('#botTitleBar')) { 
+					            var botDiv = document.querySelector('#botDiv'); 
+					            botDiv.style.height = botDiv.style.height == '600px' ? '38px' : '600px';
+					        };
+					    });
+					}
+					</script>
+				<div class="openChat">
+					<form>
+					<h1>Chat</h1>
+					<label for="msg"><b>Message</b></label>
+					<textarea placeholder="Type message.." name="msg" required></textarea>
+					<button type="button" onclick="loadlink()" class="btn">Send</button>
+					<button type="button" class="btn close" onclick="closeForm()">Close</button>
+					</form>
+				</div>
+				<script>
+					document .querySelector(".openChatBtn") .addEventListener("click", openForm);
+					document.querySelector(".close").addEventListener("click", closeForm);
+					function openForm() {
+						document.querySelector(".openChat").style.display = "block";
+					}
+					
+					function closeForm() {
+					    document.querySelector(".openChat").style.display = "none";
+					}
+				</script>
+				<!--<div class="pop-up">
+					<form action="/action_page.php" class="form-container">
+    					<h1>Chat</h1>
+    					<label for="msg"><b>Message</b></label>
+    					<textarea placeholder="Type message.." name="msg" required></textarea>
+    					<button type="submit" class="btn">Send</button>
+    					<button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+    					https://webchat.botframework.com/embed/collegebot123?s=oP4mV1w1OiU.j0raOpkFrR9fiJWMlY1i1pOfZIYOCd3CbInPlTnN84A
+    				</form>
+					
+				</div>-->
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

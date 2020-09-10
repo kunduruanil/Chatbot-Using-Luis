@@ -7,7 +7,17 @@ from config.config_reader import ConfigReader
 from logger.logger import Log
 
 
-d = {"pay":"you need to pay 50k also you need to look in to potel"}
+d = {"application_deadlines":"https://www.pvamu.edu/admissions/application-deadlines/",
+     "requirements_for_admission":"Domestic admission Graduate : https://www.pvamu.edu/graduatestudies/prospective-students/domestic-admissions/ \n International admissions Graduate: https://www.pvamu.edu/graduatestudies/prospective-students/international-admissions/ \n Domestic admission Undergraduate: https://www.pvamu.edu/admissions/freshman/ \n International admissions Undergraduate: https://www.pvamu.edu/admissions/international/",
+     "graduate_programs_offered":"https://www.pvamu.edu/graduatestudies/prospective-students/programs/",
+     "pay":"https://www.pvamu.edu/graduatestudies/funding/",
+     "academic_advisors":"check in portal",
+     "holidays":"https://www.pvamu.edu/calendars/holiday-calendar/",
+     "oncampus_employment":"https://www.pvamu.edu/hr/careers-at-pvamu/",
+     "register_classes":"https://www.pvamu.edu/internationalprograms/registering/",
+     "student_idcard":"https://www.pvamu.edu/auxiliaryservices/panther-card/",
+     "course_details":"check in portal",
+     "office_hours":"check in portal"}
 
 class LuisConnect(ActivityHandler):
     def __init__(self):
@@ -30,7 +40,7 @@ class LuisConnect(ActivityHandler):
         out = self.luis_util.luis_result_as_dict(result)
         print(out)
         weather = out['topScoringIntent']['intent']
-        #weather = d[weather]
+        weather = d[weather]
         #json_str = json.loads((str("hello")).replace("'", "\""))
         #weather=weather_info.get_weather_info(json_str.get('entity'))
         #weather = "i dont have anaswer"

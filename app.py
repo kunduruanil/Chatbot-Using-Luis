@@ -1,4 +1,4 @@
-from flask import Flask, request, Response
+from flask import Flask, request, Response,jsonify
 from botbuilder.core import BotFrameworkAdapter, BotFrameworkAdapterSettings, ConversationState,MemoryStorage
 from botbuilder.schema import Activity
 import asyncio
@@ -18,12 +18,19 @@ bot_adapter = BotFrameworkAdapter(bot_settings)
 #CON_MEMORY = ConversationState(MemoryStorage())
 luis_bot_dialog = LuisConnect()
 
+@app.route("/")
+def test():
+    return jsonify("working")
+
 
 @app.route("/api/messages", methods=["POST"])
 def messages():
     if "application/json" in request.headers["content-type"]:
         log=Log()
         request_body = request.json
+        print("hello")
+        print(request_body)
+        print("hi")
         user_says = Activity().deserialize(request_body)
         log.write_log(sessionID='session1',log_message="user says: "+str(user_says))
         authorization_header = (request.headers["Authorization"] if "Authorization" in request.headers else "")
